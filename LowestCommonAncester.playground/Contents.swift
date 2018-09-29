@@ -37,8 +37,10 @@ func testTreeStructure() {
         } else { print("Test Failed") }
 }
 
+
 testTreeStructure()
 
+}
 
 
 
