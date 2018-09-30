@@ -18,6 +18,12 @@ class LowestCommonAncestorTests: XCTestCase {
     func testTreeStructure() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let node8 = Node(left:nil,val: 8, right: nil)
+        let node2 = Node(left:nil,val: 2, right: nil)
+        let node5 = Node (left: node2,val: 5,right: node8)
+        let tree = BinaryTree (root: node5)
+        XCTAssertEqual(tree.countNodes(n : tree.root),3)
+        print(tree.toString(n: tree.root))
     }
 
     func testPerformanceExample() {

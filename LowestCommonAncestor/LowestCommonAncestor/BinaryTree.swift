@@ -5,42 +5,34 @@
 //  Created by Sarah Phillips on 29/09/2018.
 //  Copyright © 2018 Sarah Phillips. All rights reserved.
 //
-class Node <T> {
-    var value: T
+
+class Node {
+    var val: Int
     var left: Node?
-    var right: Node? //can be nodes or null values
-    init(left:Node?,value: T,right:Node?) {
-        self.value = value
+    var right: Node? //can be nodes or nil values
+    init(left:Node?,val: Int,right:Node?) {
+        self.val = val
         self.left = left
         self.right = right
     }
 }
-class BinaryTree<T>{
-    var root: Node<Any>?
-    init(root: Node<Any>?,count:Int) {
+class BinaryTree{
+    var root: Node?
+    init(root: Node?) {
         self.root = root
     }
     
-    func countNodes(n:Node<Any>?) -> Int {
+    func countNodes(n:Node?) -> Int {
         var count : Int
-        if (n == nil) {
-            return 0
-        }
-        
+        if (n == nil) { return 0 }
         count = 1 + countNodes(n: n?.left) + countNodes(n:n?.right)
         return (count)
         
     }
-//    func BinaryTree: CustomStringConvertible {
-//        public var description: String {
-//            switch self {
-//            case let .node(left, value, right):
-//                return "value: \(value), left = (" + left.description + "), right = (" + right.description + ")"
-//            case .empty:
-//                return ""
-//            }
-//        }
-//}
-
-
+    func toString(n: Node?) -> String {
+        var tree : String
+        if (n == nil) { return "_" }
+        tree = "value: \(String(describing: (n?.val != nil) ? n!.val : nil ))), left = (\(toString(n: n?.left != nil ? n!.left : nil))), right = (\(toString(n: n?.right != nil ? n!.right : nil)))"
+        return tree
+    }
 }
