@@ -32,7 +32,7 @@ class BinaryTree{
     func toString(n: Node?) -> String {
         var tree : String
         if (n == nil) { return "_" }
-        tree = "value: \(String(describing: (n?.val != nil) ? n!.val : nil ))), left = (\(toString(n: n?.left != nil ? n!.left : nil))), right = (\(toString(n: n?.right != nil ? n!.right : nil)))"
+        tree = "value: \(n!.val), left = (\(toString(n: n!.left ))), right = (\(toString(n: n?.right)))"
         return tree
     }
     func LCA(n1: Int,n2:Int) -> Node? {

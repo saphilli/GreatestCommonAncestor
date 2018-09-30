@@ -24,6 +24,17 @@ class LowestCommonAncestorTests: XCTestCase {
         let tree1 = BinaryTree(root: nil)
         XCTAssertEqual(tree.countNodes(n : tree1.root),0) 
     }
+    func testPrint() {
+        let node6 = Node(left:nil,val: 6, right: nil)
+        let node3 = Node(left:nil,val: 3, right: nil)
+        let node9 = Node(left:nil,val:9,right:nil)
+        let node4 = Node(left:nil,val: 4, right: node6)
+        let node8 = Node(left:node3,val: 8, right: nil)
+        let node2 = Node(left:node4,val: 2, right: node9)
+        let node5 = Node (left: node2,val: 5,right: node8)
+        let tree = BinaryTree (root: node5)
+        print(tree.toString(n: tree.root))
+    }
     func testLCA() {
         let node6 = Node(left:nil,val: 6, right: nil)
         let node3 = Node(left:nil,val: 3, right: nil)
