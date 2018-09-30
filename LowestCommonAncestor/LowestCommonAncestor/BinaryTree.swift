@@ -35,4 +35,17 @@ class BinaryTree{
         tree = "value: \(String(describing: (n?.val != nil) ? n!.val : nil ))), left = (\(toString(n: n?.left != nil ? n!.left : nil))), right = (\(toString(n: n?.right != nil ? n!.right : nil)))"
         return tree
     }
+    func LCA(n1: Int,n2:Int) -> Node? {
+        return findLCA(n:root,n1:n1,n2:n2)
+    }
+    func findLCA(n:Node?, n1:Int,n2:Int) -> Node? {
+        if n ==  nil {
+            return nil
+        }
+        if(n!.val == n1 || n!.val == n2) { return n }
+        let left_lca = findLCA(n:n!.left,n1:n1,n2:n2)
+        let right_lca = findLCA(n:n!.right,n1:n1,n2:n2)
+        if (left_lca != nil && right_lca != nil) { return n }
+        return (left_lca != nil) ? left_lca : right_lca
+    }
 }
