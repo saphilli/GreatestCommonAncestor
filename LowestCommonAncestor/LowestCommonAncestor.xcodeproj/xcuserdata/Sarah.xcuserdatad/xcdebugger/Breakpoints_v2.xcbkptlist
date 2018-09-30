@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestor/BinaryTree.swift"
-            timestampString = "560033630.243202"
+            timestampString = "560035691.079903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "toString(n:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestor/BinaryTree.swift"
-            timestampString = "560033630.243287"
+            timestampString = "560035691.080001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "toString(n:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestor/BinaryTree.swift"
-            timestampString = "560033630.243353"
+            timestampString = "560035691.0800771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "countNodes(n:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestorTests/LowestCommonAncestorTests.swift"
-            timestampString = "560033630.243418"
+            timestampString = "560035691.080156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "testLCANil()"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "testNullCaseLCA()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestorTests/LowestCommonAncestorTests.swift"
-            timestampString = "560033630.243884"
+            timestampString = "560035691.080659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "testLCA()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestorTests/LowestCommonAncestorTests.swift"
-            timestampString = "560033630.244226"
+            timestampString = "560035691.081025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "testLCA()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LowestCommonAncestorTests/LowestCommonAncestorTests.swift"
-            timestampString = "560033630.244572"
+            timestampString = "560035691.081381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "testPrint()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testToString()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
