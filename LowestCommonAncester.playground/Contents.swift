@@ -1,3 +1,6 @@
+
+//following two methods are taken from the Swift Algorithm Club Binary tree repository ( before i decided to use a class
+//instead of an enumerator)
 public indirect enum BinaryTree<T> {
     case empty
     case node(BinaryTree<T>,T,BinaryTree<T>)
