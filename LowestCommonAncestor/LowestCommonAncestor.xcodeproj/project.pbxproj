@@ -16,6 +16,8 @@
 		263A8F83216021A900DC1330 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8F82216021A900DC1330 /* BinaryTree.swift */; };
 		26B5AC152180F689000645CA /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5AC142180F689000645CA /* Edge.swift */; };
 		26B5AC172180F7C2000645CA /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5AC162180F7C2000645CA /* Vertex.swift */; };
+		26B5AC192181028A000645CA /* Graphable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5AC182181028A000645CA /* Graphable.swift */; };
+		26B5AC1B21810DE2000645CA /* AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5AC1A21810DE2000645CA /* AdjacencyList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		263A8F82216021A900DC1330 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		26B5AC142180F689000645CA /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		26B5AC162180F7C2000645CA /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		26B5AC182181028A000645CA /* Graphable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphable.swift; sourceTree = "<group>"; };
+		26B5AC1A21810DE2000645CA /* AdjacencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				263A8F61215FFE9900DC1330 /* LaunchScreen.storyboard */,
 				263A8F64215FFE9900DC1330 /* Info.plist */,
 				26B5AC142180F689000645CA /* Edge.swift */,
+				26B5AC182181028A000645CA /* Graphable.swift */,
+				26B5AC1A21810DE2000645CA /* AdjacencyList.swift */,
 			);
 			path = LowestCommonAncestor;
 			sourceTree = "<group>";
@@ -206,9 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B5AC192181028A000645CA /* Graphable.swift in Sources */,
 				263A8F83216021A900DC1330 /* BinaryTree.swift in Sources */,
 				263A8F5B215FFE9600DC1330 /* ViewController.swift in Sources */,
 				26B5AC152180F689000645CA /* Edge.swift in Sources */,
+				26B5AC1B21810DE2000645CA /* AdjacencyList.swift in Sources */,
 				26B5AC172180F7C2000645CA /* Vertex.swift in Sources */,
 				263A8F59215FFE9600DC1330 /* AppDelegate.swift in Sources */,
 			);

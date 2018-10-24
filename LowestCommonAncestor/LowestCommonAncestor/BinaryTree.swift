@@ -47,8 +47,8 @@ class BinaryTree{
     }
     
     func findLCA(n:Node?, n1:Int,n2:Int) -> Node? {
-        if n ==  nil { return nil }
-        if(n!.val == n1 || n!.val == n2) { return n } 
+        if n ==  nil { return nil } //if a node doesnt exist the LCA is nil
+        if(n!.val == n1 || n!.val == n2) { return n } //
         let left_lca = findLCA(n:n!.left,n1:n1,n2:n2)
         let right_lca = findLCA(n:n!.right,n1:n1,n2:n2)
         if (left_lca != nil && right_lca != nil) { return n }
