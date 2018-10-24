@@ -14,6 +14,8 @@
 		263A8F63215FFE9900DC1330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263A8F61215FFE9900DC1330 /* LaunchScreen.storyboard */; };
 		263A8F6E215FFE9900DC1330 /* LowestCommonAncestorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8F6D215FFE9900DC1330 /* LowestCommonAncestorTests.swift */; };
 		263A8F83216021A900DC1330 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A8F82216021A900DC1330 /* BinaryTree.swift */; };
+		26B5AC152180F689000645CA /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5AC142180F689000645CA /* Edge.swift */; };
+		26B5AC172180F7C2000645CA /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5AC162180F7C2000645CA /* Vertex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		263A8F6D215FFE9900DC1330 /* LowestCommonAncestorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowestCommonAncestorTests.swift; sourceTree = "<group>"; };
 		263A8F6F215FFE9900DC1330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263A8F82216021A900DC1330 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		26B5AC142180F689000645CA /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		26B5AC162180F7C2000645CA /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		263A8F57215FFE9600DC1330 /* LowestCommonAncestor */ = {
 			isa = PBXGroup;
 			children = (
+				26B5AC162180F7C2000645CA /* Vertex.swift */,
 				263A8F82216021A900DC1330 /* BinaryTree.swift */,
 				263A8F58215FFE9600DC1330 /* AppDelegate.swift */,
 				263A8F5A215FFE9600DC1330 /* ViewController.swift */,
@@ -86,6 +91,7 @@
 				263A8F5F215FFE9900DC1330 /* Assets.xcassets */,
 				263A8F61215FFE9900DC1330 /* LaunchScreen.storyboard */,
 				263A8F64215FFE9900DC1330 /* Info.plist */,
+				26B5AC142180F689000645CA /* Edge.swift */,
 			);
 			path = LowestCommonAncestor;
 			sourceTree = "<group>";
@@ -202,6 +208,8 @@
 			files = (
 				263A8F83216021A900DC1330 /* BinaryTree.swift in Sources */,
 				263A8F5B215FFE9600DC1330 /* ViewController.swift in Sources */,
+				26B5AC152180F689000645CA /* Edge.swift in Sources */,
+				26B5AC172180F7C2000645CA /* Vertex.swift in Sources */,
 				263A8F59215FFE9600DC1330 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
