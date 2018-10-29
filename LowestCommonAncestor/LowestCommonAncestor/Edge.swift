@@ -2,7 +2,7 @@
 //  Edge.swift
 //  LowestCommonAncestor
 //
-//  Created by Sarah Phillips 
+//  Created by Sarah Phillips
 //  Copyright © 2018 Sarah Phillips. All rights reserved.
 //
 
