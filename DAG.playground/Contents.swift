@@ -111,6 +111,55 @@ public class DirectedGraph<T>: CustomStringConvertible {
         }
         return correctPaths
     }
+    //removes Duplicates of vertices that occur in the 2d array of paths
+    func removeDuplicates(_ pathArray : Array<Array<Vertex<T>>>) -> Array<Vertex<T>>{
+        var flattened = pathArray.flatMap { $0 } //flatten the 2d array
+        var uniques = [Vertex<T>]()
+        uniques.append(flattened[0]) //add first vertex
+        for v in flattened { //for every vertice in the graph
+            var foundDuplicate = false
+            for v1 in uniques { //compare to every vertice in unique array
+                if v === v1 {
+                    foundDuplicate = true
+                }
+            }
+            if foundDuplicate == false{ //add if the vertex hasnt been added to the array already
+                uniques.append(v)
+            }
+        }
+        return uniques
+    }
+    
+    func findLCA(_ v:Vertex<T>,_ v1: Vertex<T>,_ v2: Vertex<T>) -> Vertex<T>?{
+        let red = findPaths(v,v1) //2d array of ancestors to v1 (coloured red)
+        let blue = findPaths(v,v2) //2d array of ancestors to v2 (coloured blue)
+        let redAncestors = removeDuplicates(red)
+        let blueAncestors = removeDuplicates(blue)
+        var commonAncestors = [Vertex<T>]()
+        for v in redAncestors{ //get common ancestors
+            for v1 in blueAncestors {
+                if v===v1 {
+                    commonAncestors.append(v)
+                }
+            }
+        }
+        //count the children of every ancestor and return the vertex that doesnt have any children (LCA)
+        for v in commonAncestors {
+            var countChildren = 0
+            for edge in v.neighbours {
+                for i in commonAncestors{
+                    if edge.to === i {
+                        countChildren+=1
+                    }
+                }
+            }
+            if countChildren == 0 {
+                return v
+            }
+        }
+        return nil
+    }
+    
 }
 
 var v = Vertex(0,"A")
@@ -135,4 +184,5 @@ g.addEdge(g.graph[4],g.graph[5])
 g.addEdge(g.graph[4],g.graph[6])
 g.addEdge(g.graph[5],g.graph[7])
 g.addEdge(g.graph[6],g.graph[8])
-print(g.findPaths(g.graph[0],g.graph[7]))
+print(g.findLCA(g.graph[0],g.graph[7],g.graph[8])!)
+print(g.findLCA(g.graph[0],g.graph[1],g.graph[5])!)
