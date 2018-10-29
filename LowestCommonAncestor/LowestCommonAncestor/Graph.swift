@@ -1,57 +1,11 @@
+//
+//  Graph.swift
+//  
+//
+//  Created by Sarah Phillips
+//
+import Foundation
 
-
-public class Vertex<T> : CustomStringConvertible{
-    var key: Int
-    var data: T
-    var neighbours: Array<Edge<T>>
-    init(_ key:Int,_ data:T) {
-        self.key = key
-        self.data = data
-        self.neighbours = Array<Edge<T>>()
-    }
-    public var description: String{
-        return "(\(key):\(data))"
-    }
-}
-
-public class Edge<T>: CustomStringConvertible {
-    var from: Vertex<T>
-    var to: Vertex<T>
-    init(_ src:Vertex<T>,_ dst:Vertex<T>) {
-        from = src
-        to = dst
-    }
-    public var description: String{
-        return "(\(from):\(to))"
-    }
-}
-//printable queue class
-public class Queue<T> : CustomStringConvertible{
-    var array = [T]()
-    public var description: String{
-        var str = ""
-        for i in array {
-            str+="\(i) "
-        }
-        return "\(str)"
-    }
-    public var count: Int {
-        return array.count
-    }
-    public var isEmpty: Bool {
-        return array.isEmpty
-    }
-    public func enqueue(_ element: T) {
-        array.append(element)
-    }
-    public func dequeue() -> T? {
-        if isEmpty {
-            return nil
-        } else {
-            return array.removeFirst()
-        }
-    }
-}
 public class DirectedGraph<T>: CustomStringConvertible {
     var graph:Array<Vertex<T>>
     init(_ v: Vertex<T>) {
@@ -72,7 +26,7 @@ public class DirectedGraph<T>: CustomStringConvertible {
     }
     //create a new vertex
     func addVertex(_ data: T) -> Vertex<T> {
-        let key = graph.count
+        var key = g.count-1
         let newVertex: Vertex = Vertex<T>(key,data) //set the key
         graph.append(newVertex) //add the vertex to the vertex array
         return newVertex
@@ -111,28 +65,5 @@ public class DirectedGraph<T>: CustomStringConvertible {
         }
         return correctPaths
     }
+  
 }
-
-var v = Vertex(0,"A")
-var g = DirectedGraph(v)
-g.addVertex("B")
-g.addVertex("C")
-g.addVertex("D")
-g.addVertex("E")
-g.addVertex("F")
-g.addVertex("G")
-g.addVertex("H")
-g.addVertex("I")
-g.addEdge(g.graph[0],g.graph[1])
-g.addEdge(g.graph[0],g.graph[2])
-g.addEdge(g.graph[0],g.graph[3])
-g.addEdge(g.graph[1],g.graph[7])
-g.addEdge(g.graph[2],g.graph[8])
-g.addEdge(g.graph[3],g.graph[7])
-g.addEdge(g.graph[3],g.graph[4])
-g.addEdge(g.graph[3],g.graph[8])
-g.addEdge(g.graph[4],g.graph[5])
-g.addEdge(g.graph[4],g.graph[6])
-g.addEdge(g.graph[5],g.graph[7])
-g.addEdge(g.graph[6],g.graph[8])
-print(g.findPaths(g.graph[0],g.graph[7]))
