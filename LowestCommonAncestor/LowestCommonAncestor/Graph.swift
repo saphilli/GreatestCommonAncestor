@@ -6,7 +6,7 @@
 //
 import Foundation
 
-public class DirectedGraph<T>: CustomStringConvertible {
+public class Graph<T>: CustomStringConvertible {
     var graph:Array<Vertex<T>>
     init(_ v: Vertex<T>) {
         graph = []   //the graph is represented as an array of vertices
@@ -26,7 +26,7 @@ public class DirectedGraph<T>: CustomStringConvertible {
     }
     //create a new vertex
     func addVertex(_ data: T) -> Vertex<T> {
-        var key = g.count-1
+        let key = (graph.count)
         let newVertex: Vertex = Vertex<T>(key,data) //set the key
         graph.append(newVertex) //add the vertex to the vertex array
         return newVertex

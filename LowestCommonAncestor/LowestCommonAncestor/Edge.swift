@@ -16,6 +16,6 @@ public class Edge<T>: CustomStringConvertible {
         to = dst
     }
     public var description: String{
-        return "(\(from):\(to))"
+        return "(\(from)->\(to))"
     }
 }
