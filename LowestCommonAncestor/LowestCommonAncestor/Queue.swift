@@ -28,8 +28,7 @@ public class Queue<T> : CustomStringConvertible{
     public func dequeue() -> T? {
         if isEmpty {
             return nil
-        } else {
-            return array.removeFirst()
         }
+        return array.removeFirst()
     }
 }

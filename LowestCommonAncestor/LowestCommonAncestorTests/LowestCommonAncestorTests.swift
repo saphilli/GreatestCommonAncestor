@@ -70,8 +70,7 @@ class LowestCommonAncestorTests: XCTestCase {
     }
     //DAG tests
     func testDAG(){
-        let v = Vertex(0,"A")
-        let g = Graph(v)
+        let g = Graph("A")
         g.addVertex("B")
         g.addVertex("C")
         g.addVertex("D")
@@ -92,7 +91,7 @@ class LowestCommonAncestorTests: XCTestCase {
         g.addEdge(g.graph[4],g.graph[6])
         g.addEdge(g.graph[5],g.graph[7])
         g.addEdge(g.graph[6],g.graph[8])
-        XCTAssertEqual("\(g.graph)","[(0:A), (1:B), (2:C), (3:D), (4:E), (5:F), (6:G), (7:H), (8:I)]")
+        XCTAssertEqual("\(g)","\n(0:A):(1:B)(2:C)(3:D)\n(1:B):(7:H)\n(2:C):(8:I)\n(3:D):(7:H)(4:E)(8:I)\n(4:E):(5:F)(6:G)\n(5:F):(7:H)\n(6:G):(8:I)\n(7:H):\n(8:I):")
         XCTAssertEqual("\(g.graph[0].neighbours)","[((0:A)->(1:B)), ((0:A)->(2:C)), ((0:A)->(3:D))]")
         XCTAssertEqual("\(g.graph[1].neighbours)","[((1:B)->(7:H))]")
         XCTAssertEqual("\(g.graph[2].neighbours)","[((2:C)->(8:I))]")
@@ -103,5 +102,47 @@ class LowestCommonAncestorTests: XCTestCase {
         XCTAssertEqual("\(g.graph[7].neighbours)","[]")
         XCTAssertEqual("\(g.graph[8].neighbours)","[]")
     }
+    func testQueue() {
+        let q = Queue <Int> ()
+        XCTAssertEqual(nil,q.dequeue())
+        q.enqueue(1)
+        q.enqueue(2)
+        q.enqueue(3)
+        XCTAssertEqual("1 2 3 ","\(q)")
+        XCTAssertEqual(q.count,3)
+        XCTAssertEqual(1,q.dequeue()!)
+        XCTAssertEqual("2 3 ","\(q)")
+        XCTAssertEqual(Optional(2),q.dequeue())
+        XCTAssertEqual("3 ","\(q)")
+    }
+    func testLCADAG() {
+        let g = Graph("A")
+        XCTAssertEqual("\(g.findLCA(g.graph[0],g.graph[0],g.graph[00]))","(0:A)")
+        g.addVertex("B")
+        g.addVertex("C")
+        g.addVertex("D")
+        g.addVertex("E")
+        g.addVertex("F")
+        g.addVertex("G")
+        g.addVertex("H")
+        g.addVertex("I")
+        g.addEdge(g.graph[0],g.graph[1])
+        g.addEdge(g.graph[0],g.graph[2])
+        g.addEdge(g.graph[0],g.graph[3])
+        g.addEdge(g.graph[1],g.graph[7])
+        g.addEdge(g.graph[2],g.graph[8])
+        g.addEdge(g.graph[3],g.graph[7])
+        g.addEdge(g.graph[3],g.graph[4])
+        g.addEdge(g.graph[3],g.graph[8])
+        g.addEdge(g.graph[4],g.graph[5])
+        g.addEdge(g.graph[4],g.graph[6])
+        g.addEdge(g.graph[5],g.graph[7])
+        g.addEdge(g.graph[6],g.graph[8])
+        XCTAssertEqual("\(g.findLCA(g.graph[0],g.graph[7],g.graph[8]))","(4:E)")
+        XCTAssertEqual("\(g.findLCA(g.graph[0],g.graph[1],g.graph[8]))","(0:A)")
+        
+        
+    }
+
 
 }

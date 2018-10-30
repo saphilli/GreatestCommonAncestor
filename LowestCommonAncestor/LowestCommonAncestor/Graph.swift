@@ -8,8 +8,9 @@ import Foundation
 
 public class Graph<T>: CustomStringConvertible {
     var graph:Array<Vertex<T>>
-    init(_ v: Vertex<T>) {
+    init(_ data: T) {
         graph = []   //the graph is represented as an array of vertices
+        let v = Vertex(0,data)
         graph.append(v)
     }
     public var description: String {
@@ -25,11 +26,10 @@ public class Graph<T>: CustomStringConvertible {
         return str
     }
     //create a new vertex
-    func addVertex(_ data: T) -> Vertex<T> {
+    func addVertex(_ data: T)  {
         let key = (graph.count)
         let newVertex: Vertex = Vertex<T>(key,data) //set the key
         graph.append(newVertex) //add the vertex to the vertex array
-        return newVertex
     }
     //create new edge
     func addEdge(_ src: Vertex<T>,_ dst: Vertex<T>) {
@@ -41,7 +41,11 @@ public class Graph<T>: CustomStringConvertible {
         let pathQueue = Queue<Array<Vertex<T>>>()       //paths to be explored
         var correctPaths = Array<Array<Vertex<T>>>()    //array that stores correct paths
         var path = Array<Vertex<T>>()                   //create the array of vertices
-        if (src === dst) { return correctPaths }
+        if (src === dst) {
+            path.append(src)
+            correctPaths.append(path)
+            return correctPaths
+        }
         path.append(src)                                //start as one path starting with src vertex
         pathQueue.enqueue(path)                         //add the path onto the queue
         while let p = pathQueue.dequeue() {             //while a path exists in the queue to be explored
@@ -57,9 +61,6 @@ public class Graph<T>: CustomStringConvertible {
                     }
                     split.append(edge.to)               //add the neighbour onto the end of the copied path
                     pathQueue.enqueue(split)            //add the new path to the queue
-                }
-                if lowestVertex.neighbours.count == 0 { //if the lowest vertex has no neighbors exit the loop
-                    break;
                 }
             }
         }
@@ -84,7 +85,7 @@ public class Graph<T>: CustomStringConvertible {
         return uniques
     }
     
-    func findLCA(_ v:Vertex<T>,_ v1: Vertex<T>,_ v2: Vertex<T>) -> Vertex<T>?{
+    func findLCA(_ v:Vertex<T>,_ v1: Vertex<T>,_ v2: Vertex<T>) -> Vertex<T>{
         let red = findPaths(v,v1) //2d array of ancestors to v1 (coloured red)
         let blue = findPaths(v,v2) //2d array of ancestors to v2 (coloured blue)
         let redAncestors = removeDuplicates(red)
@@ -98,6 +99,7 @@ public class Graph<T>: CustomStringConvertible {
             }
         }
         //count the children of every ancestor and return the vertex that doesnt have any children (LCA)
+        var lca = graph[0]
         for v in commonAncestors {
             var countChildren = 0
             for edge in v.neighbours {
@@ -108,9 +110,9 @@ public class Graph<T>: CustomStringConvertible {
                 }
             }
             if countChildren == 0 {
-                return v
+                lca = v
             }
         }
-        return nil
+        return lca
     }
 }
